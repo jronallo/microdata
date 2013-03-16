@@ -26,6 +26,11 @@ Or install it yourself as:
 
 The commandline tool microdata.rb can be run like the following:
 
+```
+microdata.rb http://d.lib.ncsu.edu/collections/catalog/mc00383-001-ff0006-001-001_0038
+```
+
+Output is in pretty JSON format.
 
 ## Contributing
 
