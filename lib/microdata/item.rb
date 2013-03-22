@@ -8,6 +8,7 @@ module Microdata
       @id   = extract_itemid
       @properties = {}
       @page_url = page_url
+      add_itemref_properties(@top_node)
       parse_elements(extract_elements(@top_node))
     end
 
@@ -59,6 +60,19 @@ module Microdata
     def add_itemprop(itemprop)
       properties = Itemprop.parse(itemprop, @page_url)
       properties.each { |name, value| (@properties[name] ||= []) << value }
+    end
+
+    # Add any properties referred to by 'itemref'
+    def add_itemref_properties(element)
+      itemref = element.attribute('itemref')
+      if itemref
+        itemref.value.split(' ').each {|id| parse_elements(find_with_id(id))}
+      end
+    end
+
+    # Find an element with a matching id
+    def find_with_id(id)
+      @top_node.search("//*[@id='#{id}']")
     end
 
   end
