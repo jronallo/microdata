@@ -1,7 +1,7 @@
 module Microdata
   class Document
 
-    attr_reader :items
+    attr_reader :items, :doc
 
     def initialize(content, page_url=nil)
       @doc = Nokogiri::HTML(content)
