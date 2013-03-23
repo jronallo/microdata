@@ -15,7 +15,7 @@ module Microdata
     def to_hash
       hash = {}
       hash[:id] = id if id
-      hash[:type] = type
+      hash[:type] = type if type
       hash[:properties] = {}
       properties.each do |name, values|
         final_values = values.map do |value|
