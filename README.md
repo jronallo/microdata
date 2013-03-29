@@ -2,6 +2,8 @@
 
 Ruby library for extracting HTML5 Microdata
 
+[![Build Status](https://travis-ci.org/jronallo/microdata.png)](https://travis-ci.org/jronallo/microdata)
+
 ## Story 
 
 Most of the code here was extracted from [Mida](https://github.com/LawrenceWoodman/mida) by Lawrence Woodman. This was done in order to have a simpler, more generic Microdata parser without all the vocabulary awareness and other features. This gem is also tested under Ruby 1.9.3 and Ruby 2.0.0, though it could be better tested.
